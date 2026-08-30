@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>For My Eicha Baby 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+background:#170a10;
+}
+
+.page{
+display:none;
+height:100vh;
+width:100vw;
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at 50% 20%,#fff,#fff1f5 45%,#e8b9c6);
+}
+
+.page.active{
+display:flex;
+align-items:center;
+justify-content:center;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+.content{
+text-align:center;
+z-index:10;
+padding:25px;
+}
+
+h1{
+font-family:"Great Vibes";
+font-size:clamp(65px,14vw,120px);
+color:#9c3c59;
+font-weight:400;
+}
+
+h2{
+font-family:"Playfair Display";
+font-size:32px;
+color:#713747;
+margin:15px;
+}
+
+p{
+font-family:"Patrick Hand";
+font-size:25px;
+color:#71434f;
+max-width:650px;
+line-height:1.5;
+margin:auto;
+}
+
+button{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+border-radius:50px;
+background:#a84462;
+color:white;
+font-size:15px;
+cursor:pointer;
+box-shadow:0 10px 30px #8d375522;
+}
+
+button:hover{
+transform:scale(1.06);
+}
+
+/* STARS */
+
+.star{
+position:absolute;
+color:white;
+font-size:25px;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;transform:scale(.6)}
+to{opacity:1;transform:scale(1.3)}
+}
+
+/* PETALS */
+
+.petal{
+position:absolute;
+top:-30px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:
+translateY(110vh)
+rotate(600deg)
+translateX(100px);
+opacity:0;
+}
+}
+
+/* ENVELOPE */
+
+.envelope{
+width:240px;
+height:160px;
+background:#c65b79;
+margin:30px auto;
+position:relative;
+box-shadow:0 20px 40px #8c3d5422;
+}
+
+.envelope:after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+border-left:120px solid transparent;
+border-right:120px solid transparent;
+border-top:90px solid #ec9bb1;
+}
+
+.seal{
+position:absolute;
+z-index:5;
+left:93px;
+top:65px;
+font-size:50px;
+}
+
+/* TEDDY */
+
+.teddy{
+font-size:150px;
+animation:teddy 2s infinite ease-in-out;
+}
+
+@keyframes teddy{
+50%{transform:translateY(-12px)}
+}
+
+/* BOUQUET */
+
+.bouquet{
+font-size:160px;
+animation:flower 2s ease;
+}
+
+@keyframes flower{
+from{
+transform:scale(0) rotate(-20deg);
+}
+to{
+transform:scale(1);
+}
+}
+
+/* PHOTO */
+
+.photo{
+width:min(320px,80vw);
+height:390px;
+object-fit:cover;
+border:10px solid white;
+box-shadow:0 20px 60px #5e263744;
+transform:rotate(2deg);
+margin:25px;
+}
+
+/* FIREWORK */
+
+.firework{
+position:fixed;
+font-size:30px;
+animation:explode 2s ease forwards;
+z-index:100;
+}
+
+@keyframes explode{
+0%{
+transform:scale(.2);
+opacity:1;
+}
+100%{
+transform:
+translate(
+calc((var(--x) - 50vw)),
+calc((var(--y) - 50vh))
+)
+scale(1.5);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div id="petals"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="p1">
+
+<div class="content">
+
+<p>for the girl who means more than she knows...</p>
+
+<h1>Eicha Baby</h1>
+
+<div class="envelope">
+<div class="seal">❤️</div>
+</div>
+
+<p>
+I have something waiting for you.
+</p>
+
+<button onclick="next('p2')">
+OPEN MY HEART 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="p2">
+
+<div class="content">
+
+<h2>
+A little question...
+</h2>
+
+<div style="font-size:110px">🥺</div>
+
+<p>
+Eicha Baby,
+will you accept your birthday surprise?
+</p>
+
+<button onclick="next('p3')">
+YES, OBVIOUSLY ❤️
+</button>
+
+<button onclick="next('pNo')" style="background:#777">
+NO
+</button>
+
+</div>
+
+</section>
+
+
+<!-- NO -->
+
+<section class="page" id="pNo">
+
+<div class="content">
+
+<div style="font-size:130px">
+😭
+</div>
+
+<h1 style="font-size:70px">
+Excuse me?!
+</h1>
+
+<p>
+You really clicked NO?
+<br>
+After all this effort? 😭
+</p>
+
+<button onclick="next('p2')">
+GO BACK AND CHOOSE WISELY ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- TEDDY -->
+
+<section class="page" id="p3">
+
+<div class="content">
+
+<div class="teddy">
+🧸
+</div>
+
+<h1>
+A hug first.
+</h1>
+
+<p>
+Before your birthday surprises,
+you get a giant teddy hug.
+
+Because if I were there,
+I'd be hugging you myself.
+</p>
+
+<button onclick="next('p4')">
+NOW YOUR FLOWERS 🌷
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FLOWERS -->
+
+<section class="page" id="p4">
+
+<div class="content">
+
+<div class="bouquet">
+💐
+</div>
+
+<h1>
+For you.
+</h1>
+
+<p>
+Not because you need flowers...
+
+but because someone as beautiful
+as you deserves them.
+</p>
+
+<button onclick="next('p5')">
+THERE'S ONE LAST THING 🎁
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="page" id="p5">
+
+<div class="content">
+
+<h1>
+Happy Birthday
+</h1>
+
+<h2>
+My Eicha Baby ❤️
+</h2>
+
+<img src="eicha.jpg" class="photo">
+
+<p>
+You are precious to me in ways
+I probably don't say enough.
+
+Thank you for being you.
+
+I hope this year brings you
+everything your heart wishes for.
+
+And I hope I get to be there
+for as many of those moments
+as possible.
+
+I love you. ❤️
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+function next(id){
+
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+document.getElementById(id)
+.classList.add("active");
+
+if(id==="p5"){
+fireworks();
+}
+
+}
+
+/* STARS */
+
+for(let i=0;i<60;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.innerHTML="✦";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*3+"s";
+
+document.getElementById("stars").appendChild(s);
+
+}
+
+/* PETALS */
+
+function petals(){
+
+for(let i=0;i<50;i++){
+
+let p=document.createElement("div");
+
+p.className="petal";
+
+p.innerHTML=["🌸","🌷","💕","🤍"]
+[Math.floor(Math.random()*4)];
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=
+5+Math.random()*7+"s";
+
+p.style.animationDelay=
+Math.random()*4+"s";
+
+document.getElementById("petals")
+.appendChild(p);
+
+}
+
+}
+
+petals();
+
+/* FIREWORKS */
+
+function fireworks(){
+
+for(let i=0;i<80;i++){
+
+setTimeout(()=>{
+
+let f=document.createElement("div");
+
+f.className="firework";
+
+f.innerHTML=["✨","💗","❤️","⭐","🌸"]
+[Math.floor(Math.random()*5)];
+
+f.style.left="50vw";
+f.style.top="45vh";
+
+f.style.setProperty("--x",
+Math.random()*100+"vw");
+
+f.style.setProperty("--y",
+Math.random()*100+"vh");
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),2200);
+
+},i*35);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
